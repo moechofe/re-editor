@@ -299,6 +299,7 @@ class _CodeInputController extends ChangeNotifier implements DeltaTextInputClien
     if (!_hasInputConnection) {
       final TextInputConnection connection = TextInput.attach(this,
         const TextInputConfiguration(
+					enableSuggestions: false,
           enableDeltaModel: true,
           inputAction: TextInputAction.newline
         ),
@@ -353,22 +354,22 @@ class _CodeInputController extends ChangeNotifier implements DeltaTextInputClien
 class _SmartTextEditingDelta {
 
   static const List<_ClosureSymbol> _closureSymbols = [
-    _ClosureSymbol('{', '}'),
-    _ClosureSymbol('[', ']'),
-    _ClosureSymbol('(', ')'),
+    // _ClosureSymbol('{', '}'),
+    // _ClosureSymbol('[', ']'),
+    // _ClosureSymbol('(', ')'),
   ];
 
   static const List<String> _quoteSymbols = [
-    '\'', '"', '`'
+    // '\'', '"', '`'
   ];
 
   static const List<_ClosureSymbol> _wrapSymbols = [
-    _ClosureSymbol('{', '}'),
-    _ClosureSymbol('[', ']'),
-    _ClosureSymbol('(', ')'),
-    _ClosureSymbol('\'', '\''),
-    _ClosureSymbol('"', '"'),
-    _ClosureSymbol('`', '`'),
+    // _ClosureSymbol('{', '}'),
+    // _ClosureSymbol('[', ']'),
+    // _ClosureSymbol('(', ')'),
+    // _ClosureSymbol('\'', '\''),
+    // _ClosureSymbol('"', '"'),
+    // _ClosureSymbol('`', '`'),
   ];
 
   final TextEditingDelta _delta;

@@ -509,11 +509,11 @@ class _CodeEditorState extends State<CodeEditor> {
       child = Focus(
         autofocus: autofocus,
         focusNode: _focusNode,
-        onKey: (node, event) {
-          if (event.isKeyPressed(LogicalKeyboardKey.backspace)) {
+        onKeyEvent: (node, event) {
+					if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.backspace) {
             _editingController.deleteBackward();
             return KeyEventResult.handled;
-          } else if (event.isKeyPressed(LogicalKeyboardKey.enter)) {
+          } else if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.enter) {
             _editingController.applyNewLine();
             return KeyEventResult.handled;
           }
